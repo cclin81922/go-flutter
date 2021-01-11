@@ -4,6 +4,10 @@
 git clone https://github.com/cclin81922/go-flutter.git
 cd go-flutter
 
+cd fe
+flutter build web
+cd ..
+
 go build
 ./go-flutter
 ```
