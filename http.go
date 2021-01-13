@@ -6,7 +6,8 @@ import (
 )
 
 func HttpServe() {
-    http.Handle("/", http.FileServer(http.Dir("fe/build/web")))
+    http.Handle("/", http.FileServer(http.Dir(*fe)))
     go http.ListenAndServe(fmt.Sprintf(":%d",*port), nil)
-    fmt.Println(fmt.Sprintf("HTTP server port: %d",*port))
+    fmt.Printf("HTTP server port: %d\n",*port)
+    fmt.Printf("Frontend static files root path: %s\n",*fe)
 }
